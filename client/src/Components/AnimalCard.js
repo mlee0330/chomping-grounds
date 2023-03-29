@@ -24,7 +24,7 @@ function AnimalCard({ animal, className }) {
     } catch (e) {
       console.log(e)
     }
-  });
+  }, [animal]);
 
   return (
     <Card className={`animal-card ${className}`}>
