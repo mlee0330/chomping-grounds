@@ -5,7 +5,6 @@ function AnimalCard({ animal, className }) {
   const [animalName, setAnimalName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   // const API_KEY = process.env.REACT_APP_API_KEY;
-  const API_KEY = "aEiI8WiGfOJ/sPfTZoKUjg==NWausnUB0sMHIUxr";
 
   useEffect(() => {
     try {
@@ -25,7 +24,7 @@ function AnimalCard({ animal, className }) {
     } catch (e) {
       console.log(e)
     }
-  }, []);
+  });
 
   return (
     <Card className={`animal-card ${className}`}>

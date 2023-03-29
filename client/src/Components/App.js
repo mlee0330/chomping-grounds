@@ -64,9 +64,7 @@ function App() {
       {animal && <AnimalCard className="animal-hero" key={animal.name} animal={animal.name} />}
       {noData && <h1>Animal data not found for {searchQuery}</h1>}
       <AnimalList characteristics={characteristics} dietType={characteristics.diet}/>
-      <footer>
-        <div>Michael Lee</div>
-      </footer>
+      <footer>Michael Lee</footer>
     </Container>
   );
 }
