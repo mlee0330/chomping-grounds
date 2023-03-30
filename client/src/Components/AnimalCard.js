@@ -37,7 +37,7 @@ function AnimalCard({ animal, className, fetchAnimal, setSearchQuery }) {
   return (
     <Card className={`animal-card ${className}`} onClick={handleClick}>
       <Card.Body>
-        <Card.Title>{animalName}</Card.Title>
+        <Card.Title>{animal}</Card.Title>
         {/* <div>{JSON.stringify(animalData)}</div> */}
       </Card.Body>
       <div className="img-container">
