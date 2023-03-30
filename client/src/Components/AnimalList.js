@@ -1,15 +1,13 @@
-import React from "react";
-import AnimalCard from "./AnimalCard";
+import React from "react"
+import AnimalCard from "./AnimalCard"
 
-function AnimalList({characteristics, dietType}) {
-
+function AnimalList({characteristics, dietType, fetchAnimal, setSearchQuery}) {
   const renderAnimalCards = (charObj, diet) => {
-    console.log(charObj, 'this is carobj')
     try{
       let animals
       if (diet === "prey") {
         if (charObj.predators) {
-          animals = charObj.predators
+          animals = charObj.predators;
         } else if (charObj.predator) {
           animals = charObj.predator
         } else {
@@ -22,7 +20,6 @@ function AnimalList({characteristics, dietType}) {
         } else if (charObj.main_prey) {
           animals = charObj.main_prey
         } else {
-          console.log('no prey info')
           return <h2>No prey information found</h2>
         }
       }
@@ -31,7 +28,7 @@ function AnimalList({characteristics, dietType}) {
       //check for prey vs main prey, take 'prey' 'predator' as second param
 
       return animals.split(', ').map((animal) => (
-        <AnimalCard key={animal} animal={animal}/>
+        <AnimalCard setSearchQuery={setSearchQuery} fetchAnimal={fetchAnimal}  key={animal} animal={animal}/>
       ));
     } catch (e) {console.log(e)}
   };
@@ -64,4 +61,4 @@ function AnimalList({characteristics, dietType}) {
   );
 }
 
-export default AnimalList;
+export default AnimalList

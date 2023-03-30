@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Card } from "react-bootstrap";
+import React, { useState, useEffect } from "react"
+import { Card } from "react-bootstrap"
 
-function AnimalCard({ animal, className }) {
-  const [animalName, setAnimalName] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+function AnimalCard({ animal, className, fetchAnimal, setSearchQuery }) {
+  const [animalName, setAnimalName] = useState('')
+  const [imageUrl, setImageUrl] = useState('')
+
   // const API_KEY = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
@@ -14,20 +15,27 @@ function AnimalCard({ animal, className }) {
               Authorization: "o2251Cpmrbfp09fEWihRsXU2lMDtMHkS6tNY6rFTfM3XgvxS4TwRqTwv"
             }
           });
-          const pexelData = await pexelsData.json();
-          setImageUrl(pexelData.photos[0].src.medium);
+          const pexelData = await pexelsData.json()
+          setImageUrl(pexelData.photos[Math.floor(Math.random()*10)].src.medium)
       };
 
       const animalName = animal[animal.length - 1] === "s" ? animal.substring(0, animal.length - 1) : animal
       setAnimalName(animalName)
-      fetchAnimalImg(animalName);
+      fetchAnimalImg(animalName)
     } catch (e) {
       console.log(e)
     }
   }, [animal]);
 
+  const handleClick = async (e) => {
+    try {
+      setSearchQuery(animalName)
+      fetchAnimal(animalName)
+    } catch (e) {console.log(e)}
+  }
+
   return (
-    <Card className={`animal-card ${className}`}>
+    <Card className={`animal-card ${className}`} onClick={handleClick}>
       <Card.Body>
         <Card.Title>{animalName}</Card.Title>
         {/* <div>{JSON.stringify(animalData)}</div> */}
@@ -40,4 +48,4 @@ function AnimalCard({ animal, className }) {
   );
 }
 
-export default AnimalCard;
+export default AnimalCard
