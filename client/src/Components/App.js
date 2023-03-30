@@ -13,7 +13,7 @@ function App() {
   // const API_KEY = process.env.REACT_APP_API_KEY;
   const API_KEY = "aEiI8WiGfOJ/sPfTZoKUjg==NWausnUB0sMHIUxr"
 
-  const handleSearch = async (event, name) => {
+  const handleSearch = async (event) => {
     event?.preventDefault()
     fetchAnimal(searchQuery)
   }

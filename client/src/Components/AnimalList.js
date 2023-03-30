@@ -11,7 +11,6 @@ function AnimalList({characteristics, dietType, fetchAnimal, setSearchQuery}) {
         } else if (charObj.predator) {
           animals = charObj.predator
         } else {
-          console.log('no pred info')
           return <h2>No predator information found</h2>
         }
       } else if (diet === "predator") {
@@ -24,7 +23,6 @@ function AnimalList({characteristics, dietType, fetchAnimal, setSearchQuery}) {
         }
       }
 
-      console.log(animals.split(', '), 'this is animals')
       //check for prey vs main prey, take 'prey' 'predator' as second param
 
       return animals.split(', ').map((animal) => (
