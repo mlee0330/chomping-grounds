@@ -2,6 +2,9 @@ import React, { useState } from "react"
 import { Container, Form, Button } from "react-bootstrap"
 import AnimalCard from "./AnimalCard"
 import AnimalList from "./AnimalList"
+import HeroCard from "./HeroCard"
+
+import "bootstrap/dist/css/bootstrap.min.css"
 import "../App.css"
 
 function App() {
@@ -32,7 +35,6 @@ function App() {
       // refactor to use perfect match
       // pull out state setting to separate function
       if (data.length > 0) {
-        console.log(data)
         setAnimal(data[0])
         setCharacteristics(data[0].characteristics)
       } else {
@@ -66,7 +68,9 @@ function App() {
         </Form>
       </div>
       <h2>{animal?.characteristics?.diet}</h2>
-      {animal && <AnimalCard className="animal-hero" key={animal.name} animal={animal.name} />}
+      {/* {animal && <AnimalCard className="animal-hero" key={animal.name} animal={animal.name} characteristics={characteristics}/>} */}
+      {animal && <HeroCard className="animal-hero" key={animal.name} animal={animal.name} characteristics={characteristics}/>}
+      
       {noData && <h1>Animal data not found for {searchQuery}</h1>}
       <AnimalList setSearchQuery={setSearchQuery} fetchAnimal={fetchAnimal} characteristics={characteristics} dietType={characteristics.diet}/>
       <footer>Michael Lee</footer>
