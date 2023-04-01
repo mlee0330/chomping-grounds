@@ -31,11 +31,12 @@ function AnimalCard({ animal, className, fetchAnimal, setSearchQuery, characteri
     try {
       setSearchQuery(animalName)
       fetchAnimal(animalName)
+      window.scroll(0,0)
     } catch (e) {console.log(e)}
   }
 
   return (
-    <Card className="animal-card" onClick={handleClick}>
+    <Card className={`animal-card ${className}`} onClick={handleClick}>
       <Card.Body>
         <Card.Title>
           {animal} 

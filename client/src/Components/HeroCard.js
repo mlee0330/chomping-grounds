@@ -16,7 +16,7 @@ function HeroCard(props){
     useEffect(() => {
         let infoObj = Object.entries(props.characteristics).map(([key, value]) => {
             return (
-              <div><span style={{'fontWeight':'bold'}}>{key.replaceAll('_', ' ').toUpperCase(0)}:</span>{value.replaceAll('_', ' ')}</div>
+              <div><span style={{'fontWeight':'bold'}}>{key.replaceAll('_', ' ').toUpperCase(0)}: </span>{value}</div>
             );
           });
           setAnimalInfo(infoObj)
@@ -36,7 +36,6 @@ function HeroCard(props){
                     Animal Facts
                     </Card.Title>
                     <div>{animalInfo}</div>
-                    {/* <div>{JSON.stringify(animalData)}</div> */}
                 </Card.Body>
                 <Button onClick={handleClick}>Click to flip back</Button>
             </Card>
