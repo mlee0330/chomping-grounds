@@ -26,7 +26,7 @@ function AnimalList({characteristics, dietType, fetchAnimal, setSearchQuery}) {
       //check for prey vs main prey, take 'prey' 'predator' as second param
 
       return animals.split(', ').map((animal) => (
-        <AnimalCard setSearchQuery={setSearchQuery} fetchAnimal={fetchAnimal}  key={animal} animal={animal}/>
+        <AnimalCard setSearchQuery={setSearchQuery} fetchAnimal={fetchAnimal} key={animal} animal={animal}/>
       ));
     } catch (e) {console.log(e)}
   };

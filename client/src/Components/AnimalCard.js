@@ -35,7 +35,7 @@ function AnimalCard({ animal, className, fetchAnimal, setSearchQuery, characteri
   }
 
   return (
-    <Card className={`animal-card ${className}`} onClick={handleClick}>
+    <Card className="animal-card" onClick={handleClick}>
       <Card.Body>
         <Card.Title>
           {animal} 

@@ -26,9 +26,9 @@ function HeroCard(props){
     return (
         <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
             <div id="heroContainer">
-                <Button id="infoButton" onClick={handleClick}>Click for more facts</Button>
                 <AnimalCard {...props}>
                 </AnimalCard>
+                <Button id="infoButton" onClick={handleClick}>Click for more facts</Button>
             </div>
             <Card onClick={handleClick}>
                 <Card.Body>

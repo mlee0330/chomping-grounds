@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Container, Form, Button } from "react-bootstrap"
-import AnimalCard from "./AnimalCard"
 import AnimalList from "./AnimalList"
 import HeroCard from "./HeroCard"
 
