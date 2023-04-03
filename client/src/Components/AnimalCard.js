@@ -16,7 +16,9 @@ function AnimalCard({ animal, className, fetchAnimal, setSearchQuery, characteri
             }
           });
           const pexelData = await pexelsData.json()
-          setImageUrl(pexelData.photos[Math.floor(Math.random()*10)]?.src.medium)
+          let pexelInd = pexelData.photos.length > 9 ? Math.floor(Math.random()*10) : 0
+          setImageUrl(pexelData.photos[pexelInd]?.src.medium)
+          console.log(imageUrl)
       };
 
       const name = animal[animal.length - 1] === "s" ? animal.substring(0, animal.length - 1) : animal
